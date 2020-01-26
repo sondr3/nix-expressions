@@ -14,5 +14,5 @@
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  maple = pkgs.callPackage ./pkgs/maple { };
+  maple = pkgs.callPackage ./pkgs/maple {};
 }
