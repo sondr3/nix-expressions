@@ -3,5 +3,6 @@ result-*
 
 .envrc
 .direnv/
-site/data/pkgs.json
 site/public/
+public/
+site/resources/_gen/

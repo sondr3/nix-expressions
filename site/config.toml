@@ -1,10 +1,9 @@
-baseURL = "https://sondr3.github.io/nix/"
+baseURL = "https://sondr3.github.io/nix-expressions/"
 languageCode = "en-us"
 title = "Nix Channels - Sondre Nilsen"
 theme = "book"
 
 disablePathToLower = true
-relativeURLs = true
 
 [markup.tableOfContents]
   startLevel = 1

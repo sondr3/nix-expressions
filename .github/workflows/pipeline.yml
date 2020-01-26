@@ -45,6 +45,26 @@ jobs:
           file: ci.nix
           attributes: cacheOutputs
 
+  website:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          submodules: true
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build website
+        run: hugo --minify -s site
+
       - name: Publish website
-        run: |
-          nix-build site.nix
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./site/public

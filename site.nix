@@ -13,7 +13,9 @@ in
     name = "site";
     version = "0.1";
     src = ./site;
-    buildInputs = [ pkgs.hugo pkgs.caddy ];
+    buildInputs = [ pkgs.hugo pkgs.caddy pkgs.nodejs ];
+
+    impureEnvVars = [ "NETLIFY_SITE_ID" "NETLIFY_AUTH_TOKEN" "GITHUB_ACTIONS" ];
 
     buildPhase = ''
       mkdir -p {themes,data}
@@ -27,7 +29,10 @@ in
       mkdir $out/nix
       cp $out/*.css $out/nix/
 
-      if [[ -v CI ]]; then echo "Hello, GitHub"; else echo "Hello, me"; fi
+      if [[ -v GITHUB_ACTIONS ]]; then
+        npm install netlify-cli
+        ./node_modules/.bin/netlify deploy $out --message="$GITHUB_SHA" --prod
+      fi
     '';
 
     shellHook = ''
