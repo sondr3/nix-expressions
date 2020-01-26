@@ -1,0 +1,17 @@
+baseURL = "https://sondr3.github.io/nix/"
+languageCode = "en-us"
+title = "Nix Channels - Sondre Nilsen"
+theme = "book"
+
+disablePathToLower = true
+relativeURLs = true
+
+[markup.tableOfContents]
+  startLevel = 1
+
+[param]
+  BookToC = true
+  BookSection = "*"
+  BookRepo = "https://github.com/sondr3/nix-expressions"
+  BookSearch = false
+  BookComments = false

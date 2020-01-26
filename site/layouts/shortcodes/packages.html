@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Version</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range .Site.Data.pkgs }}
+    <tr>
+      <td><a href="{{ .url }}">{{ .name }}</a></td>
+      <td>{{ .version }}</td>
+      <td>{{ .description }}</td>
+    </tr>
+    {{ end }}
+  </tbody>
+</table>

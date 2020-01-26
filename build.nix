@@ -5,23 +5,26 @@
 with builtins;
 
 let
-  pkgsMeta = map (pkg: (parseDrvName pkg.name) // { description = pkg.meta.description; } ) ci.buildPkgs;
+  pkgsMeta = map (pkg: (parseDrvName pkg.name) // { description = pkg.meta.description; url = pkg.meta.homepage; } ) ci.buildPkgs;
   pkgsJSON = pkgs.writeText "pkgsJson" (toJSON pkgsMeta);
 in
 {
   website = pkgs.stdenv.mkDerivation {
     name = "site";
     version = "0.1";
-    src = ./docs;
+    src = ./site;
     buildInputs = [ pkgs.hugo pkgs.caddy ];
 
     buildPhase = ''
       cp -r ${sources.hugo-book} themes/book
-      cp ${pkgsJSON} pkgs.json
+      cp ${pkgsJSON} data/pkgs.json
     '';
 
     installPhase = ''
-      hugo --minify --theme book -d $out
+      hugo --minify -d $out
+      # hacks because Hugo hates relative URLs
+      mkdir $out/nix
+      cp $out/*.css $out/nix/
     '';
 
     shellHook = ''
