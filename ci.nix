@@ -9,8 +9,7 @@
 # then your CI will be able to build and cache only those packages for
 # which this is possible.
 
-{ pkgs ? import <nixpkgs> {}
-, build ? import ./build.nix {}}:
+{ pkgs ? import <nixpkgs> {} }:
 
 with builtins;
 
@@ -60,6 +59,4 @@ rec {
 
   buildOutputs = concatMap outputsOf buildPkgs;
   cacheOutputs = concatMap outputsOf cachePkgs;
-
-  website = build.website;
 }
