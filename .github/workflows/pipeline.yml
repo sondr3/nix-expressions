@@ -37,10 +37,14 @@ jobs:
       - name: Check overlays
         run: nix eval -f default.nix 'overlays'
 
-      - name: Publish
+      - name: Publish to Cachix
         uses: cachix/cachix-action@v3
         with:
           name: sondr3-nix
           signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
           file: ci.nix
           attributes: cacheOutputs
+
+      - name: Publish website
+        run: |
+          nix-build site.nix

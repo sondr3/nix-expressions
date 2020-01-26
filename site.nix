@@ -16,6 +16,7 @@ in
     buildInputs = [ pkgs.hugo pkgs.caddy ];
 
     buildPhase = ''
+      mkdir -p {themes,data}
       cp -r ${sources.hugo-book} themes/book
       cp ${pkgsJSON} data/pkgs.json
     '';
@@ -25,6 +26,8 @@ in
       # hacks because Hugo hates relative URLs
       mkdir $out/nix
       cp $out/*.css $out/nix/
+
+      if [[ -v CI ]]; then echo "Hello, GitHub"; else echo "Hello, me"; fi
     '';
 
     shellHook = ''
