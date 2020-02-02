@@ -2,18 +2,19 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "maple";
-  version = "0.5";
+  version = "0.7";
 
   src = fetchFromGitHub {
     owner = "liuchengxu";
     repo = "vim-clap";
-    rev = "f74287222cbc65edcc5623ac2de61d62c624f533";
-    sha256 = "03l19vlxhl7r1q4sx6lakrflc095zsjpndjdgj452n0ngcgywp3q";
+    rev = "v${version}";
+    sha256 = "1klbl6j8618bdhsvpplwq2igakgcgzgc4j1428s428kxr7g4l7pb";
   };
 
-  cargoSha256 = "1zkkg87mjwv42hyvzfn70c51j7lmq6qmpp7a0sz5c7g89x39ih3s";
+  cargoSha256 = "1crwd8444zaa0yb8jz01nij4xzc5s0qh8h0v6l6x3lbwxg7idbay";
 
   nativeBuildInputs = [ pkgconfig ];
+  doCheck = false;
 
   meta = with stdenv.lib; {
     description = "Modern performant generic finder and dispatcher for Vim and NeoVim";
