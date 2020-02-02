@@ -17,8 +17,9 @@ rustPlatform.buildRustPackage rec {
   doCheck = false;
 
   meta = with stdenv.lib; {
-    description = "Modern performant generic finder and dispatcher for Vim and NeoVim";
-    homepage = https://github.com/liuchengxu/vim-clap;
+    description =
+      "Modern performant generic finder and dispatcher for Vim and NeoVim";
+    homepage = "https://github.com/liuchengxu/vim-clap";
     license = licenses.mit;
   };
 }

@@ -22,7 +22,7 @@ stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "Desktop chat client for Slack (and Discord)";
-    homepage = https://cancel.fm/ripcord/;
+    homepage = "https://cancel.fm/ripcord/";
     license = licenses.unfree;
     platforms = [ "x86_64-linux" ];
   };
