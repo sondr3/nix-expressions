@@ -1,8 +1,8 @@
 {
   "maple": {
-    "name": "maple-0.5",
+    "name": "maple-0.7",
     "pname": "maple",
-    "version": "0.5",
+    "version": "0.7",
     "system": "x86_64-linux",
     "meta": {
       "available": true,
@@ -14,7 +14,7 @@
         "spdxId": "MIT",
         "url": "http://spdx.org/licenses/MIT.html"
       },
-      "name": "maple-0.5",
+      "name": "maple-0.7",
       "outputsToInstall": [
         "out"
       ],
@@ -35,7 +35,31 @@
         "aarch64-darwin",
         "armv7a-darwin"
       ],
-      "position": "/home/sondre/Code/nix/nix-expressions/pkgs/maple/default.nix:19"
+      "position": "/home/sondre/Code/nix/nix-expressions/pkgs/maple/default.nix:20"
+    }
+  },
+  "ripcord": {
+    "name": "ripcord-0.4.22",
+    "pname": "ripcord",
+    "version": "0.4.22",
+    "system": "x86_64-linux",
+    "meta": {
+      "available": true,
+      "description": "Desktop chat client for Slack (and Discord)",
+      "homepage": "https://cancel.fm/ripcord/",
+      "license": {
+        "free": false,
+        "fullName": "Unfree",
+        "shortName": "unfree"
+      },
+      "name": "ripcord-0.4.22",
+      "outputsToInstall": [
+        "out"
+      ],
+      "platforms": [
+        "x86_64-linux"
+      ],
+      "position": "/home/sondre/Code/nix/nix-expressions/pkgs/ripcord/default.nix:24"
     }
   }
 }

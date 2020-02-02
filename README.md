@@ -7,3 +7,8 @@ A budding collection of personal packages, modules etc for Nix(OS).
 | Name                                            | Description                                                        |
 |-------------------------------------------------|--------------------------------------------------------------------|
 | [maple](https://github.com/liuchengxu/vim-clap) | Modern performant generic finder and dispatcher for Vim and NeoVim |
+| [ripcord](https://cancel.fm/ripcord/)           | Desktop chat client for Slack (and Discord)                        |
+
+## LICENSE
+
+MIT
