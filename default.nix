@@ -15,4 +15,5 @@
   overlays = import ./overlays; # nixpkgs overlays
 
   maple = pkgs.callPackage ./pkgs/maple {};
+  ripcord = pkgs.callPackage ./pkgs/ripcord {};
 }
