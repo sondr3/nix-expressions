@@ -9,7 +9,7 @@
   <tbody>
     {{ range .Site.Data.pkgs }}
     <tr>
-      <td><a href="{{ .url }}">{{ .pname }}</a></td>
+      <td><a href="{{ .meta.homepage }}">{{ .pname }}</a></td>
       <td>{{ .version }}</td>
       <td>{{ .meta.description }}</td>
     </tr>
