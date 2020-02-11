@@ -1,8 +1,6 @@
-{ pkgs ? import <nixpkgs> { }, stdenv
-, ghcWithPackages ? pkgs.haskellPackages.ghcWithPackages, makeWrapper
-, packages ? (x: [ ]) }:
+{ stdenv, ghcWithPackages, makeWrapper }:
 
-let xmobarEnv = ghcWithPackages (self: [ self.xmobar ] ++ packages self);
+let xmobarEnv = ghcWithPackages (self: [ self.xmobar ]);
 in stdenv.mkDerivation {
   name = "xmobar-with-packages-${xmobarEnv.version}";
 

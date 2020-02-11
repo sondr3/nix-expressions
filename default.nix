@@ -16,5 +16,5 @@
 
   maple = pkgs.callPackage ./pkgs/maple { };
   ripcord = pkgs.callPackage ./pkgs/ripcord { };
-  xmobar-wrapped = pkgs.callPackage ./pkgs/xmobar-wrapped { };
+  xmobar-wrapped = pkgs.haskellPackages.callPackage ./pkgs/xmobar-wrapped { };
 }
