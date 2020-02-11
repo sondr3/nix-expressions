@@ -4,10 +4,11 @@ A budding collection of personal packages, modules etc for Nix(OS).
 
 ## Packages
 
-| Name                                            | Description                                                        |
-|-------------------------------------------------|--------------------------------------------------------------------|
-| [maple](https://github.com/liuchengxu/vim-clap) | Modern performant generic finder and dispatcher for Vim and NeoVim |
-| [ripcord](https://cancel.fm/ripcord/)           | Desktop chat client for Slack (and Discord)                        |
+| Name                                                            | Description                                                        |
+|-----------------------------------------------------------------|--------------------------------------------------------------------|
+| [maple](https://github.com/liuchengxu/vim-clap)                 | Modern performant generic finder and dispatcher for Vim and NeoVim |
+| [ripcord](https://cancel.fm/ripcord/)                           | Desktop chat client for Slack (and Discord)                        |
+| [rust-analyzer](https://github.com/rust-analyzer/rust-analyzer) | An experimental Rust compiler front-end for IDEs                   |
 
 ## LICENSE
 
