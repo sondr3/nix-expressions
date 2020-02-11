@@ -16,6 +16,5 @@
 
   maple = pkgs.callPackage ./pkgs/maple { };
   ripcord = pkgs.callPackage ./pkgs/ripcord { };
-  rust-analyzer = pkgs.callPackage ./pkgs/rust-analyzer { };
   xmobar-wrapped = pkgs.callPackage ./pkgs/xmobar-wrapped { };
 }
